@@ -1,0 +1,29 @@
+cabal-version:      3.0
+name:               lattice-lab
+version:            0.1.0.0
+synopsis:           Cellular automata research tool with cycle detection
+license:            MIT
+author:             TheRealAlexxx
+build-type:         Simple
+
+library
+  exposed-modules:     LatticeLab
+  hs-source-dirs:      src
+  build-depends:       base >=4.14 && <5
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+executable lattice-lab
+  main-is:             Main.hs
+  hs-source-dirs:      app
+  build-depends:       base, lattice-lab
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+test-suite golden
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  hs-source-dirs:      test
+  build-depends:       base, lattice-lab
+  default-language:    Haskell2010
+  ghc-options:         -Wall
